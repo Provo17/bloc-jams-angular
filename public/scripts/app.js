@@ -1,7 +1,7 @@
 (function(){
 
-    function config($stateProvider, $locationprovider) {
-        $locationprovider
+    function config($stateProvider, $locationProvider) {
+        $locationProvider
             .html5Mode({
                 enabled: true,
                 requireBase: false
@@ -22,9 +22,8 @@
         });
     }
 
-    angular.module('bloc-jams', ['ui.router']);
         angular
-            .module('bloc-jams', ['ui.router'])
+            .module('blocJams', ['ui.router'])
             .config(config);
 
 })();
