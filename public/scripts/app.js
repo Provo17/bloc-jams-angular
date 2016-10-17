@@ -1,11 +1,13 @@
 (function(){
 
-    function config($stateProvider, $locationProvider) {
-        $locationProvider
-            .html5Mode({
-                enabled: true,
-                requireBase: false
-        });
+    function config($stateProvider, $locationProvider, $urlRouterProvider) {
+//        $locationProvider
+//            .html5Mode({
+//                enabled: true,
+//                requireBase: false
+//        });
+
+        $urlRouterProvider.otherwise('/')
 
         $stateProvider
          .state('landing', {
