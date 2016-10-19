@@ -95,6 +95,18 @@
          SongPlayer.volume = 80;
 
          /**
+        * @desc Boolean value for mute
+        * @type {Boolean}
+        */
+         SongPlayer.muted = false;
+
+         /**
+        * @desc Variable that stores previous volume
+        * @type {Number}
+        */
+         SongPlayer.previousVolume = 80;
+
+         /**
          * @function play
          * @desc Play current or new song
          * @param {Object} song
@@ -183,6 +195,31 @@
                  currentBuzzObject.setVolume(volume);
              }
               SongPlayer.volume = volume;
+          };
+
+         /**
+         * @function muteVolume
+         * @desc Set volume to zero
+         */
+          SongPlayer.muteVolume = function() {
+             if (currentBuzzObject) {
+                 SongPlayer.previousVolume = SongPlayer.volume;
+                 currentBuzzObject.setVolume(0);
+                 SongPlayer.volume = 0;
+                 SongPlayer.muted = true;
+             }
+          };
+
+         /**
+         * @function unmuteVolume
+         * @desc Resotres volume
+         */
+          SongPlayer.unmuteVolume = function() {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(SongPlayer.previousVolume);
+                 SongPlayer.volume = SongPlayer.previousVolume;
+                 SongPlayer.muted = false;
+             }
           };
 
 
