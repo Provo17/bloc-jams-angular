@@ -129,7 +129,7 @@
         Fixtures.getCollection = function(numberOfAlbums) {
              var albums = [];
              for (var i = 0; i < numberOfAlbums; i++) {
-                 albums.push(albumPicasso,albumMarconi);
+                 albums.push(albumPicasso,albumMarconi,albumThree,albumFour,albumFive,albumSix,albumSeven,albumEight);
              }
              return albums;
          };
